@@ -14,7 +14,6 @@ Objectives:
 	
 •	Analyze the impact of random events on drone synchronization and communication.
 
-Implementation
 
 Technologies Used:
 	
