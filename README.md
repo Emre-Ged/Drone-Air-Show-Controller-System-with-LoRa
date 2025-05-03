@@ -56,5 +56,5 @@ Contact Information
 	
 •	Email: alperen.kayhan@metu.edu.tr
 	
-•	GitHub: alperen-github
+•	GitHub: AlperenKayhan-github
 
