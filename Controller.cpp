@@ -1,4 +1,7 @@
 #include <omnetpp.h>
+#include <cstdio>
+#include <memory>
+//may need to add shared pointer in future, OMNETT working or not idk -ALP
 using namespace omnetpp;
 
 class Controller : public cSimpleModule {
