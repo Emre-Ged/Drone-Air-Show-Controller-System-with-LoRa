@@ -1,4 +1,6 @@
 #include <omnetpp.h>
+#include <cstdio>
+#include <memory>
 using namespace omnetpp;
 
 class Drone : public cSimpleModule {
