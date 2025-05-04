@@ -32,10 +32,8 @@ protected:
             // random drone failure
             int idx = intuniform(0, 9);
             auto *f = new cMessage("FAIL");
-            sendDirect(f,
-                       getParentModule()->getSubmodule("drone", idx),
-                       "in");
-            scheduleAt(simTime() + exponential(1.0/failureRate), failureEvt);
+            sendDirect(f, getParentModule()->getSubmodule("drone", idx),"in");
+            scheduleAt(simTime() + exponential(1.0/failureRate), failureEvt); //Poisson‐distributed drone‐failure events
         }
         else {
             // incoming ACK
