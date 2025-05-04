@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <cstdio>
+#include <memory>
 
 struct Point { double x, y; };
 
