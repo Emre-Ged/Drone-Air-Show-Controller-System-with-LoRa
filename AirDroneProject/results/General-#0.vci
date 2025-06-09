@@ -1,0 +1,481 @@
+file 3932461 1749475226                                         
+version 3
+run General-0-20250609-16:20:02-415223
+attr configname General
+attr datetime 20250609-16:20:02
+attr datetimef 20250609-162002
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network DroneNetwork
+attr processid 415223
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../inet4.4/images
+config network DroneNetwork
+config sim-time-limit 1d
+config simtime-resolution -11
+config repeat 30
+config **.vector-recording true
+config rng-class cMersenneTwister
+config *.configurator.typename Ipv4NetworkConfigurator
+config **.ipv4Delayer.config "xmldoc(\"/home/alperen/omnetpp-6.0/samples/flora/simulations/cloudDelays.xml\")"
+config **.radio.radioMediumModule "\"LoRaMedium\""
+config **.LoRaMedium.pathLossType "\"LoRaLogNormalShadowing\""
+config **.LoRaMedium.mediumLimitCacheType "\"LoRaMediumCache\""
+config **.LoRaMedium.rangeFilter "\"communicationRange\""
+config **.LoRaMedium.neighborCacheType "\"LoRaNeighborCache\""
+config **.LoRaMedium.neighborCache.range 546m
+config **.LoRaMedium.neighborCache.refillPeriod 3000s
+config **.minInterferenceTime 0s
+config **.displayAddresses false
+config **.maxTransmissionDuration 4s
+config **.energyDetection -110dBm
+config **.updateInterval 2s
+config **.alohaChannelModel false
+config LoRaNetworkTest.**.radio.separateTransmissionParts false
+config LoRaNetworkTest.**.radio.separateReceptionParts false
+config **.sigma 3.57
+config **.numberOfNodes 1
+config **.constraintAreaMinX 0m
+config **.constraintAreaMinY 0m
+config **.constraintAreaMinZ 0m
+config **.constraintAreaMaxX 600m
+config **.constraintAreaMaxY 600m
+config **.constraintAreaMaxZ 0m
+config **.Drone[*].**.initialX 200m
+config **.Drone[*].**.initialY 200m
+config **.Drone[*].**initialLoRaSF 12
+config **.Drone[*].**initialLoRaTP 14dBm
+config **.Drone[*].**initialLoRaBW "125 kHz"
+config **.Drone[*].**initialLoRaCR 4
+config **.Drone[*].**.initFromDisplayString false
+config **.Drone[*].**.evaluateADRinNode true
+config **.Drone[*].LoRaNic.radio.energyConsumer.typename LoRaEnergyConsumer
+config **.Drone[*].LoRaNic.energySourceModule "\"^.IdealEpEnergyStorage\""
+config **.Drone[*].**.energySourceModule "\"^.IdealEpEnergyStorage\""
+config **.Drone[*].LoRaNic.radio.energyConsumer.configFile "xmldoc(\"/home/alperen/omnetpp-6.0/samples/flora/simulations/energyConsumptionParameters.xml\")"
+config **.Drone[*].numUdpApps 2
+config **.Drone[*].udpApp[0].typename SimpleLoRaApp
+config **.Drone[*].udpApp[0].localPort 6000
+config **.Drone[*].udpApp[0].destPort 2000
+config **.Drone[*].udpApp[0].destAddresses "\"loRaGW[0]\""
+config **.Drone[*].udpApp[0].timeToFirstPacket uniform(0s,1s)
+config **.Drone[*].udpApp[0].timeToNextPacket exponential(1s)
+config **.Drone[*].udpApp[1].typename UdpSink
+config **.Drone[*].udpApp[1].localPort 7000
+config **.numberOfGateways 1
+config **.loRaGW[0].**.initialX 200m
+config **.loRaGW[0].**.initialY 200m
+config **.loRaGW[0].**.initFromDisplayString false
+config **.LoRaGWNic.radio.iAmGateway true
+config **.loRaGW[0].numUdpApps 1
+config **.loRaGW[0].udpApp[0].typename UdpForwardApp
+config **.loRaGW[0].udpApp[0].localPort 2000
+config **.loRaGW[0].udpApp[0].destPort 7000
+config **.loRaGW[0].udpApp[0].destAddresses "\"Drone[0..9]\""
+config **.networkServer.numApps 1
+config **.networkServer.app[0].typename NetworkServerApp
+config **.networkServer.app[0].localPort 1000
+config **.networkServer.app[0].destPort 2000
+config **.networkServer.app[0].destAddresses "\"loRaGW[0]\""
+config **.networkServer.**.evaluateADRinServer true
+config **.networkServer.app[0].adrMethod "\"avg\""
+config **.numberOfPacketsToSend 0
+config **.timeToFirstPacket uniform(0s,1s)
+config **.timeToNextPacket exponential(1s)
+
+vector 0 DroneNetwork.loRaGW[0].udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 1 DroneNetwork.loRaGW[0].udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 2 DroneNetwork.loRaGW[0].udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 3 DroneNetwork.networkServer.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 4 DroneNetwork.networkServer.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 5 DroneNetwork.networkServer.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 6 DroneNetwork.internetCloud.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 7 DroneNetwork.internetCloud.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 8 DroneNetwork.gwRouter[0].ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 9 DroneNetwork.nsRouter.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 10 DroneNetwork.Drone1.LoRaNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 11 DroneNetwork.loRaGW[0].LoRaGWNic.radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 12 DroneNetwork.loRaGW[0].LoRaGWNic.radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 13 DroneNetwork.loRaGW[0].LoRaGWNic.radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "Radio transmission state"
+0	6745 8 0 0 0 0 1 0 0 0 0
+1	6753 8 0 0 0 0 1 0 0 0 0
+2	6761 8 0 0 0 0 1 0 0 0 0
+3	6769 8 0 0 0 0 1 0 0 0 0
+4	6777 8 0 0 0 0 1 0 0 0 0
+5	6785 8 0 0 0 0 1 0 0 0 0
+6	6793 8 0 0 0 0 1 0 0 0 0
+7	6801 8 0 0 0 0 1 0 0 0 0
+8	6809 8 0 0 0 0 1 0 0 0 0
+9	6817 8 0 0 0 0 1 0 0 0 0
+10	6825 27 0 0 0 0 3 0 1 1 1
+11	6852 27 0 0 0 0 3 0 4 4 16
+12	6879 9 0 0 0 0 1 1 1 1 1
+13	6888 9 0 0 0 0 1 1 1 1 1
+vector 14 DroneNetwork.Drone1.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 15 DroneNetwork.Drone1.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 16 DroneNetwork.loRaGW[0].eth[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 17 DroneNetwork.loRaGW[0].eth[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 18 DroneNetwork.networkServer.eth[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 19 DroneNetwork.networkServer.eth[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 20 DroneNetwork.internetCloud.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 21 DroneNetwork.internetCloud.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 22 DroneNetwork.internetCloud.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source vector 23 DroneNetwork.Drone1.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 24 DroneNetwork.Drone1.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 25 DroneNetwork.Drone2.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 26 DroneNetwork.Drone2.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 27 DroneNetwork.Drone3.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 28 DroneNetwork.Drone3.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 29 DroneNetwork.Drone4.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 30 DroneNetwork.Drone4.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 31 DroneNetwork.Drone5.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 32 DroneNetwork.Drone5.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 33 DroneNetwork.Drone6.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 34 DroneNetwork.Drone6.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 35 DroneNetwork.Drone7.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 36 DroneNetwork.Drone7.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 37 DroneNetwork.Drone8.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 38 DroneNetwork.Drone8.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 39 DroneNetwork.Drone9.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 40 DroneNetwork.Drone9.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 41 DroneNetwork.Drone10.LoRaNic.queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 42 DroneNetwork.Drone10.LoRaNic.queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 43 DroneNetwork.loRaGW[0].eth[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 44 DroneNetwork.loRaGW[0].eth[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 45 DroneNetwork.networkServer.eth[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 46 DroneNetwork.networkServer.eth[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 47 DroneNetwork.internetCloud.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 48 DroneNetwork.internetCloud.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 49 DroneNetwork.internetCloud.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 50 DroneNetwork.internetCloud.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 51 DroneNetwork.gwRouter[0].ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 52 DroneNetwork.gwRouter[0].ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 53 DroneNetwork.gwRouter[0].eth[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 54 DroneNetwork.gwRouter[0].eth[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 55 DroneNetwork.nsRouter.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 56 DroneNetwork.nsRouter.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 57 DroneNetwork.nsRouter.eth[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 58 DroneNetwork.nsRouter.eth[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+23	16465 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+24	31496 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+25	46527 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+26	61558 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+27	76589 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+28	91620 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+29	106651 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+30	121682 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+31	136713 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+32	151744 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+33	166775 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+34	181806 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+35	196837 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+36	211868 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+37	226899 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+38	241930 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+39	256961 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+40	271992 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+41	287023 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+42	302054 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+43	317085 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+44	332116 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+45	347147 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+46	362178 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+47	377209 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+48	392240 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+49	407271 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+50	422302 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+51	437333 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+52	452364 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+53	467395 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+54	482426 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+55	497457 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+56	512488 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+57	527519 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+58	542550 15031 565 565 0.1 108.84238658545 1089 0 0 0 0
+

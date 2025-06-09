@@ -1,0 +1,1004 @@
+version 3
+run DroneTriangleTurtle-0-20250608-23:26:09-369115
+attr configname DroneTriangleTurtle
+attr datetime 20250608-23:26:09
+attr datetimef 20250608-232609
+attr experiment DroneTriangleTurtle
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MobileNetwork
+attr processid 369115
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../inet4.4/images
+config extends "MobileNetwork, Area, Update"
+config description "three drones flying to the corners of a triangle via TurtleMobility"
+config *.numHosts 10
+config *.hasEnvironment true
+config *.hasVisualizer true
+config *.environment.ground.typename FlatGround
+config *.visualizer.mobilityVisualizer.displayMobility true
+config *.host[*].mobility.typename TurtleMobility
+config *.host[0].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='1']\")"
+config *.host[1].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='2']\")"
+config *.host[2].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='3']\")"
+config *.host[3].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='4']\")"
+config *.host[4].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='5']\")"
+config *.host[5].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='6']\")"
+config *.host[6].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='7']\")"
+config *.host[7].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='8']\")"
+config *.host[8].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='9']\")"
+config *.host[9].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='10']\")"
+config *.host[*].mobility.speed 5mps
+config *.host[*].mobility.stopAtEnd false
+config network MobileNetwork
+config *.numHosts 2
+config **.constraintAreaMinX 0m
+config **.constraintAreaMinY 0m
+config **.constraintAreaMinZ 0m
+config **.constraintAreaMaxX 600m
+config **.constraintAreaMaxY 600m
+config **.constraintAreaMaxZ 0m
+config **.updateInterval 1s
+
+par MobileNetwork.visualizer.sceneVisualizer typename "\"inet.visualizer.canvas.scene.SceneCanvasVisualizer\""
+par MobileNetwork.visualizer.sceneVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.sceneVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.sceneVisualizer tags "\"\""
+par MobileNetwork.visualizer.sceneVisualizer physicalEnvironmentModule "\"physicalEnvironment\""
+par MobileNetwork.visualizer.sceneVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.sceneVisualizer axisLength "nan m"
+attr mutable ""
+attr unit m
+par MobileNetwork.visualizer.sceneVisualizer animationSpeed 0
+par MobileNetwork.visualizer.sceneVisualizer sceneMinX "nan m"
+attr unit m
+par MobileNetwork.visualizer.sceneVisualizer sceneMinY "nan m"
+attr unit m
+par MobileNetwork.visualizer.sceneVisualizer sceneMinZ "nan m"
+attr unit m
+par MobileNetwork.visualizer.sceneVisualizer sceneMaxX "nan m"
+attr unit m
+par MobileNetwork.visualizer.sceneVisualizer sceneMaxY "nan m"
+attr unit m
+par MobileNetwork.visualizer.sceneVisualizer sceneMaxZ "nan m"
+attr unit m
+par MobileNetwork.visualizer.sceneVisualizer zIndex 0
+par MobileNetwork.visualizer.sceneVisualizer viewAngle "\"x right y down z out\""
+attr mutable ""
+par MobileNetwork.visualizer.sceneVisualizer viewScale "\"1 1\""
+attr mutable ""
+par MobileNetwork.visualizer.sceneVisualizer viewTranslation "\"0 0\""
+attr mutable ""
+par MobileNetwork.visualizer.sceneVisualizer descriptionFigure "\"\""
+par MobileNetwork.visualizer.physicalEnvironmentVisualizer typename "\"inet.visualizer.canvas.environment.PhysicalEnvironmentCanvasVisualizer\""
+par MobileNetwork.visualizer.physicalEnvironmentVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.physicalEnvironmentVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.physicalEnvironmentVisualizer tags "\"\""
+par MobileNetwork.visualizer.physicalEnvironmentVisualizer physicalEnvironmentModule "\"physicalEnvironment\""
+par MobileNetwork.visualizer.physicalEnvironmentVisualizer displayObjects true
+par MobileNetwork.visualizer.physicalEnvironmentVisualizer zIndex 0
+par MobileNetwork.visualizer.networkNodeVisualizer typename "\"inet.visualizer.canvas.scene.NetworkNodeCanvasVisualizer\""
+par MobileNetwork.visualizer.networkNodeVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.networkNodeVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.networkNodeVisualizer tags "\"\""
+par MobileNetwork.visualizer.networkNodeVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.networkNodeVisualizer annotationSpacing 4
+par MobileNetwork.visualizer.networkNodeVisualizer placementPenalty 10
+par MobileNetwork.visualizer.networkNodeVisualizer zIndex 0
+par MobileNetwork.visualizer.networkConnectionVisualizer typename "\"inet.visualizer.canvas.scene.NetworkConnectionCanvasVisualizer\""
+par MobileNetwork.visualizer.networkConnectionVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.networkConnectionVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.networkConnectionVisualizer tags "\"\""
+par MobileNetwork.visualizer.networkConnectionVisualizer displayNetworkConnections true
+par MobileNetwork.visualizer.networkConnectionVisualizer nodeFilter "\"\""
+attr mutable ""
+par MobileNetwork.visualizer.networkConnectionVisualizer lineColor "\"black\""
+par MobileNetwork.visualizer.networkConnectionVisualizer lineStyle "\"solid\""
+par MobileNetwork.visualizer.networkConnectionVisualizer lineWidth 1
+par MobileNetwork.visualizer.networkConnectionVisualizer zIndex 0
+par MobileNetwork.visualizer.mobilityVisualizer typename "\"inet.visualizer.canvas.mobility.MobilityCanvasVisualizer\""
+par MobileNetwork.visualizer.mobilityVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.mobilityVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.mobilityVisualizer tags "\"\""
+par MobileNetwork.visualizer.mobilityVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.mobilityVisualizer displayMobility true
+par MobileNetwork.visualizer.mobilityVisualizer animationSpeed 0
+par MobileNetwork.visualizer.mobilityVisualizer moduleFilter "\"**.mobility\""
+attr mutable ""
+par MobileNetwork.visualizer.mobilityVisualizer displayPositions false
+par MobileNetwork.visualizer.mobilityVisualizer positionCircleRadius 4
+par MobileNetwork.visualizer.mobilityVisualizer positionCircleLineWidth 1
+par MobileNetwork.visualizer.mobilityVisualizer positionCircleLineColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.mobilityVisualizer positionCircleFillColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.mobilityVisualizer displayOrientations false
+par MobileNetwork.visualizer.mobilityVisualizer orientationPieRadius 32
+par MobileNetwork.visualizer.mobilityVisualizer orientationPieSize 0.2
+par MobileNetwork.visualizer.mobilityVisualizer orientationPieOpacity 0.25
+par MobileNetwork.visualizer.mobilityVisualizer orientationLineColor "\"black\""
+par MobileNetwork.visualizer.mobilityVisualizer orientationLineStyle "\"solid\""
+par MobileNetwork.visualizer.mobilityVisualizer orientationLineWidth 1
+par MobileNetwork.visualizer.mobilityVisualizer orientationFillColor "\"blue\""
+par MobileNetwork.visualizer.mobilityVisualizer displayVelocities false
+par MobileNetwork.visualizer.mobilityVisualizer velocityArrowScale 1
+par MobileNetwork.visualizer.mobilityVisualizer velocityLineColor "\"black\""
+par MobileNetwork.visualizer.mobilityVisualizer velocityLineStyle "\"solid\""
+par MobileNetwork.visualizer.mobilityVisualizer velocityLineWidth 1
+par MobileNetwork.visualizer.mobilityVisualizer displayMovementTrails false
+par MobileNetwork.visualizer.mobilityVisualizer movementTrailLineColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.mobilityVisualizer movementTrailLineStyle "\"solid\""
+par MobileNetwork.visualizer.mobilityVisualizer movementTrailLineWidth 1
+par MobileNetwork.visualizer.mobilityVisualizer trailLength 100
+par MobileNetwork.visualizer.mobilityVisualizer zIndex 0
+par MobileNetwork.visualizer.statisticVisualizer typename "\"inet.visualizer.canvas.common.StatisticCanvasVisualizer\""
+par MobileNetwork.visualizer.statisticVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.statisticVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.statisticVisualizer tags "\"\""
+par MobileNetwork.visualizer.statisticVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.statisticVisualizer displayStatistics true
+par MobileNetwork.visualizer.statisticVisualizer signalName "\"\""
+par MobileNetwork.visualizer.statisticVisualizer statisticName "\"\""
+par MobileNetwork.visualizer.statisticVisualizer statisticUnit "\"\""
+par MobileNetwork.visualizer.statisticVisualizer statisticExpression "\"\""
+par MobileNetwork.visualizer.statisticVisualizer sourceFilter "\"**\""
+attr mutable ""
+par MobileNetwork.visualizer.statisticVisualizer format "\"%n: %v %u\""
+attr mutable ""
+par MobileNetwork.visualizer.statisticVisualizer unit "\"\""
+par MobileNetwork.visualizer.statisticVisualizer font "\"<default>\""
+par MobileNetwork.visualizer.statisticVisualizer textColor "\"black\""
+par MobileNetwork.visualizer.statisticVisualizer backgroundColor "\"white\""
+par MobileNetwork.visualizer.statisticVisualizer opacity 1
+par MobileNetwork.visualizer.statisticVisualizer placementHint "\"top\""
+par MobileNetwork.visualizer.statisticVisualizer placementPriority 0
+par MobileNetwork.visualizer.statisticVisualizer zIndex 10
+par MobileNetwork.visualizer.statisticVisualizer propertyName "\"\""
+par MobileNetwork.visualizer.statisticVisualizer propertyIndex "\"\""
+par MobileNetwork.visualizer.infoVisualizer typename "\"inet.visualizer.canvas.common.InfoCanvasVisualizer\""
+par MobileNetwork.visualizer.infoVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.infoVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.infoVisualizer tags "\"\""
+par MobileNetwork.visualizer.infoVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.infoVisualizer displayInfos true
+par MobileNetwork.visualizer.infoVisualizer modules "\"\""
+attr mutable ""
+par MobileNetwork.visualizer.infoVisualizer format "\"%t\""
+attr mutable ""
+par MobileNetwork.visualizer.infoVisualizer font "\"<default>\""
+par MobileNetwork.visualizer.infoVisualizer textColor "\"black\""
+par MobileNetwork.visualizer.infoVisualizer backgroundColor "\"white\""
+par MobileNetwork.visualizer.infoVisualizer opacity 1
+par MobileNetwork.visualizer.infoVisualizer placementHint "\"top\""
+par MobileNetwork.visualizer.infoVisualizer placementPriority 0
+par MobileNetwork.visualizer.infoVisualizer zIndex 10
+par MobileNetwork.visualizer.energyStorageVisualizer typename "\"inet.visualizer.canvas.power.EnergyStorageCanvasVisualizer\""
+par MobileNetwork.visualizer.energyStorageVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.energyStorageVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.energyStorageVisualizer tags "\"\""
+par MobileNetwork.visualizer.energyStorageVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.energyStorageVisualizer displayEnergyStorages false
+par MobileNetwork.visualizer.energyStorageVisualizer energyStorageFilter "\"**\""
+par MobileNetwork.visualizer.energyStorageVisualizer color "\"green\""
+par MobileNetwork.visualizer.energyStorageVisualizer width 8
+par MobileNetwork.visualizer.energyStorageVisualizer height 24
+par MobileNetwork.visualizer.energyStorageVisualizer spacing 2
+par MobileNetwork.visualizer.energyStorageVisualizer placementHint "\"right\""
+par MobileNetwork.visualizer.energyStorageVisualizer placementPriority 0
+par MobileNetwork.visualizer.energyStorageVisualizer zIndex 10
+par MobileNetwork.visualizer.mediumVisualizer typename "\"inet.visualizer.canvas.physicallayer.MediumCanvasVisualizer\""
+par MobileNetwork.visualizer.mediumVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.mediumVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.mediumVisualizer tags "\"\""
+par MobileNetwork.visualizer.mediumVisualizer mediumModule "\"radioMedium\""
+par MobileNetwork.visualizer.mediumVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.mediumVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.mediumVisualizer interfaceFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.mediumVisualizer packetFilter "(omnetpp::cValueHolder)holder: \"*\""
+attr mutable ""
+par MobileNetwork.visualizer.mediumVisualizer displaySignals false
+par MobileNetwork.visualizer.mediumVisualizer signalColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.mediumVisualizer signalPropagationAnimationSpeed "nan "
+attr mutable ""
+par MobileNetwork.visualizer.mediumVisualizer signalPropagationAnimationTime 1s
+attr unit s
+par MobileNetwork.visualizer.mediumVisualizer signalPropagationAdditionalTime 0s
+attr unit s
+par MobileNetwork.visualizer.mediumVisualizer signalTransmissionAnimationSpeed "nan "
+attr mutable ""
+par MobileNetwork.visualizer.mediumVisualizer signalTransmissionAnimationTime 1s
+attr unit s
+par MobileNetwork.visualizer.mediumVisualizer signalAnimationSpeedChangeTimeMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.mediumVisualizer signalAnimationSpeedChangeTime 1s
+attr unit s
+par MobileNetwork.visualizer.mediumVisualizer displaySignalDepartures false
+par MobileNetwork.visualizer.mediumVisualizer signalDepartureImage "\"misc/signal_departure.png\""
+par MobileNetwork.visualizer.mediumVisualizer signalDeparturePlacementHint "\"topCenter\""
+par MobileNetwork.visualizer.mediumVisualizer signalDeparturePlacementPriority 1
+par MobileNetwork.visualizer.mediumVisualizer displaySignalArrivals false
+par MobileNetwork.visualizer.mediumVisualizer signalArrivalImage "\"misc/signal_arrival.png\""
+par MobileNetwork.visualizer.mediumVisualizer signalArrivalPlacementHint "\"topCenter\""
+par MobileNetwork.visualizer.mediumVisualizer signalArrivalPlacementPriority -1
+par MobileNetwork.visualizer.mediumVisualizer displayCommunicationRanges false
+par MobileNetwork.visualizer.mediumVisualizer communicationRangeLineColor "\"blue\""
+par MobileNetwork.visualizer.mediumVisualizer communicationRangeLineStyle "\"solid\""
+par MobileNetwork.visualizer.mediumVisualizer communicationRangeLineWidth 1
+par MobileNetwork.visualizer.mediumVisualizer displayInterferenceRanges false
+par MobileNetwork.visualizer.mediumVisualizer interferenceRangeLineColor "\"gray\""
+par MobileNetwork.visualizer.mediumVisualizer interferenceRangeLineStyle "\"solid\""
+par MobileNetwork.visualizer.mediumVisualizer interferenceRangeLineWidth 1
+par MobileNetwork.visualizer.mediumVisualizer autoPowerAxis true
+par MobileNetwork.visualizer.mediumVisualizer signalMinPower "inf dBmW"
+attr unit dBmW
+par MobileNetwork.visualizer.mediumVisualizer signalMaxPower 0dBmW
+attr unit dBmW
+par MobileNetwork.visualizer.mediumVisualizer signalMinPowerDensity "inf dBmWpMHz"
+attr unit dBmWpMHz
+par MobileNetwork.visualizer.mediumVisualizer signalMaxPowerDensity "-inf dBmWpMHz"
+attr unit dBmWpMHz
+par MobileNetwork.visualizer.mediumVisualizer autoTimeAxis true
+par MobileNetwork.visualizer.mediumVisualizer signalMinTime 0s
+attr unit s
+par MobileNetwork.visualizer.mediumVisualizer signalMaxTime 0s
+attr unit s
+par MobileNetwork.visualizer.mediumVisualizer autoFrequencyAxis true
+par MobileNetwork.visualizer.mediumVisualizer signalMinFrequency "inf Hz"
+attr unit Hz
+par MobileNetwork.visualizer.mediumVisualizer signalMaxFrequency "-inf Hz"
+attr unit Hz
+par MobileNetwork.visualizer.mediumVisualizer displayMainPowerDensityMap false
+par MobileNetwork.visualizer.mediumVisualizer mainPowerDensityMapPixmapDensity 1
+par MobileNetwork.visualizer.mediumVisualizer mainPowerDensityMapMinX 0
+par MobileNetwork.visualizer.mediumVisualizer mainPowerDensityMapMaxX "nan "
+par MobileNetwork.visualizer.mediumVisualizer mainPowerDensityMapMinY 0
+par MobileNetwork.visualizer.mediumVisualizer mainPowerDensityMapMaxY "nan "
+par MobileNetwork.visualizer.mediumVisualizer mainPowerDensityMapZ 0
+par MobileNetwork.visualizer.mediumVisualizer mainPowerDensityMapFigureXTickCount 3
+par MobileNetwork.visualizer.mediumVisualizer mainPowerDensityMapFigureYTickCount 3
+par MobileNetwork.visualizer.mediumVisualizer displayPowerDensityMaps false
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapMode "\"auto\""
+attr enum total,signal,auto
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapPixelMode "\"mean\""
+attr enum sample,partition,mean
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapApproximationSize 10
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapCenterFrequency "nan Hz"
+attr mutable ""
+attr unit Hz
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapBandwidth 0Hz
+attr mutable ""
+attr unit Hz
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapFigureWidth 200
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapFigureHeight 120
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapPixmapWidth 200
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapPixmapHeight 120
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapZ 0
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapFigureXTickCount 3
+par MobileNetwork.visualizer.mediumVisualizer powerDensityMapFigureYTickCount 3
+par MobileNetwork.visualizer.mediumVisualizer displaySpectrums false
+par MobileNetwork.visualizer.mediumVisualizer spectrumMode "\"auto\""
+attr enum total,signal,auto
+par MobileNetwork.visualizer.mediumVisualizer spectrumFigureWidth 200
+par MobileNetwork.visualizer.mediumVisualizer spectrumFigureHeight 120
+par MobileNetwork.visualizer.mediumVisualizer spectrumFigureXTickCount 3
+par MobileNetwork.visualizer.mediumVisualizer spectrumFigureYTickCount 5
+par MobileNetwork.visualizer.mediumVisualizer spectrumFigureInterpolationSize 5
+par MobileNetwork.visualizer.mediumVisualizer spectrumPlacementHint "\"bottomCenter\""
+par MobileNetwork.visualizer.mediumVisualizer spectrumPlacementPriority -1
+par MobileNetwork.visualizer.mediumVisualizer displaySpectrograms false
+par MobileNetwork.visualizer.mediumVisualizer spectrogramMode "\"auto\""
+attr enum total,signal,auto
+par MobileNetwork.visualizer.mediumVisualizer spectrogramPixelMode "\"mean\""
+attr enum sample,partition,mean
+par MobileNetwork.visualizer.mediumVisualizer spectrogramFigureWidth 200
+par MobileNetwork.visualizer.mediumVisualizer spectrogramFigureHeight 120
+par MobileNetwork.visualizer.mediumVisualizer spectrogramPixmapWidth 200
+par MobileNetwork.visualizer.mediumVisualizer spectrogramPixmapHeight 120
+par MobileNetwork.visualizer.mediumVisualizer spectrogramFigureXTickCount 3
+par MobileNetwork.visualizer.mediumVisualizer spectrogramFigureYTickCount 5
+par MobileNetwork.visualizer.mediumVisualizer spectrogramPlacementHint "\"bottomCenter\""
+par MobileNetwork.visualizer.mediumVisualizer spectrogramPlacementPriority -1
+par MobileNetwork.visualizer.mediumVisualizer zIndex 0
+par MobileNetwork.visualizer.mediumVisualizer signalShape "\"ring\""
+attr enum ring,sphere
+par MobileNetwork.visualizer.mediumVisualizer signalOpacity 0.5
+par MobileNetwork.visualizer.mediumVisualizer signalRingCount 20
+par MobileNetwork.visualizer.mediumVisualizer signalRingSize 50m
+attr unit m
+par MobileNetwork.visualizer.mediumVisualizer signalFadingDistance 50m
+attr unit m
+par MobileNetwork.visualizer.mediumVisualizer signalFadingFactor 1.2
+par MobileNetwork.visualizer.mediumVisualizer signalWaveCount 20
+par MobileNetwork.visualizer.mediumVisualizer signalWaveLength 50m
+attr unit m
+par MobileNetwork.visualizer.mediumVisualizer signalWaveWidth 10m
+attr unit m
+par MobileNetwork.visualizer.mediumVisualizer signalWaveFadingAnimationSpeedFactor 1
+par MobileNetwork.visualizer.mediumVisualizer displayCommunicationHeat false
+par MobileNetwork.visualizer.obstacleLossVisualizer typename "\"inet.visualizer.canvas.physicallayer.TracingObstacleLossCanvasVisualizer\""
+par MobileNetwork.visualizer.obstacleLossVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.obstacleLossVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.obstacleLossVisualizer tags "\"\""
+par MobileNetwork.visualizer.obstacleLossVisualizer displayIntersections false
+par MobileNetwork.visualizer.obstacleLossVisualizer intersectionLineColor "\"red\""
+par MobileNetwork.visualizer.obstacleLossVisualizer intersectionLineStyle "\"solid\""
+par MobileNetwork.visualizer.obstacleLossVisualizer intersectionLineWidth 1
+par MobileNetwork.visualizer.obstacleLossVisualizer displayFaceNormalVectors false
+par MobileNetwork.visualizer.obstacleLossVisualizer faceNormalLineColor "\"grey\""
+par MobileNetwork.visualizer.obstacleLossVisualizer faceNormalLineStyle "\"solid\""
+par MobileNetwork.visualizer.obstacleLossVisualizer faceNormalLineWidth 1
+par MobileNetwork.visualizer.obstacleLossVisualizer fadeOutMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.obstacleLossVisualizer fadeOutTime 1s
+attr unit s
+par MobileNetwork.visualizer.obstacleLossVisualizer fadeOutAnimationSpeed 0
+par MobileNetwork.visualizer.obstacleLossVisualizer zIndex 0
+par MobileNetwork.visualizer.packetDropVisualizer typename "\"inet.visualizer.canvas.common.PacketDropCanvasVisualizer\""
+par MobileNetwork.visualizer.packetDropVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.packetDropVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.packetDropVisualizer tags "\"\""
+par MobileNetwork.visualizer.packetDropVisualizer displayPacketDrops false
+par MobileNetwork.visualizer.packetDropVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.packetDropVisualizer interfaceFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.packetDropVisualizer packetFilter "(omnetpp::cValueHolder)holder: \"*\""
+attr mutable ""
+par MobileNetwork.visualizer.packetDropVisualizer detailsFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.packetDropVisualizer icon "\"msg/packet_s\""
+par MobileNetwork.visualizer.packetDropVisualizer iconTintAmount 1
+par MobileNetwork.visualizer.packetDropVisualizer iconTintColor "\"dark\""
+par MobileNetwork.visualizer.packetDropVisualizer labelFormat "\"%n\""
+attr mutable ""
+par MobileNetwork.visualizer.packetDropVisualizer labelFont "\"<default>\""
+par MobileNetwork.visualizer.packetDropVisualizer labelColor "\"black\""
+par MobileNetwork.visualizer.packetDropVisualizer fadeOutMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.packetDropVisualizer fadeOutTime 1s
+attr unit s
+par MobileNetwork.visualizer.packetDropVisualizer fadeOutAnimationSpeed 0
+par MobileNetwork.visualizer.packetDropVisualizer zIndex 10
+par MobileNetwork.visualizer.packetDropVisualizer dx 32
+par MobileNetwork.visualizer.packetDropVisualizer dy 64
+par MobileNetwork.visualizer.packetFlowVisualizer typename "\"inet.visualizer.canvas.flow.PacketFlowCanvasVisualizer\""
+par MobileNetwork.visualizer.packetFlowVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.packetFlowVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.packetFlowVisualizer tags "\"\""
+par MobileNetwork.visualizer.packetFlowVisualizer displayRoutes false
+par MobileNetwork.visualizer.packetFlowVisualizer startPathSignal "\"packetFlowStarted\""
+par MobileNetwork.visualizer.packetFlowVisualizer extendPathSignal "\"packetReceivedFromLower\""
+par MobileNetwork.visualizer.packetFlowVisualizer endPathSignal "\"packetFlowEnded\""
+par MobileNetwork.visualizer.packetFlowVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.packetFlowVisualizer packetFilter "(omnetpp::cValueHolder)holder: \"*\""
+attr mutable ""
+par MobileNetwork.visualizer.packetFlowVisualizer lineColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.packetFlowVisualizer lineStyle "\"dashed\""
+par MobileNetwork.visualizer.packetFlowVisualizer lineWidth 3
+par MobileNetwork.visualizer.packetFlowVisualizer lineSmooth false
+par MobileNetwork.visualizer.packetFlowVisualizer lineShift 16
+par MobileNetwork.visualizer.packetFlowVisualizer lineShiftMode "\"normal\""
+par MobileNetwork.visualizer.packetFlowVisualizer lineContactSpacing 3
+par MobileNetwork.visualizer.packetFlowVisualizer lineContactMode "\"rectangular\""
+attr enum circular,rectangular
+par MobileNetwork.visualizer.packetFlowVisualizer labelFormat "\"%L %p pk (%l)\""
+par MobileNetwork.visualizer.packetFlowVisualizer labelFont "\"<default>, 8px\""
+par MobileNetwork.visualizer.packetFlowVisualizer labelColor "\"\""
+par MobileNetwork.visualizer.packetFlowVisualizer fadeOutMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.packetFlowVisualizer fadeOutTime 0s
+attr unit s
+par MobileNetwork.visualizer.packetFlowVisualizer fadeOutAnimationSpeed 0
+par MobileNetwork.visualizer.packetFlowVisualizer zIndex 4
+par MobileNetwork.visualizer.queueVisualizer typename "\"inet.visualizer.canvas.common.QueueCanvasVisualizer\""
+par MobileNetwork.visualizer.queueVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.queueVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.queueVisualizer tags "\"\""
+par MobileNetwork.visualizer.queueVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.queueVisualizer displayQueues false
+par MobileNetwork.visualizer.queueVisualizer queueFilter "\"**\""
+par MobileNetwork.visualizer.queueVisualizer color "\"blue\""
+par MobileNetwork.visualizer.queueVisualizer width 8
+par MobileNetwork.visualizer.queueVisualizer height 24
+par MobileNetwork.visualizer.queueVisualizer spacing 2
+par MobileNetwork.visualizer.queueVisualizer placementHint "\"right\""
+par MobileNetwork.visualizer.queueVisualizer placementPriority 0
+par MobileNetwork.visualizer.queueVisualizer zIndex 10
+par MobileNetwork.visualizer.gateScheduleVisualizer typename "\"inet.visualizer.canvas.common.GateScheduleCanvasVisualizer\""
+par MobileNetwork.visualizer.gateScheduleVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.gateScheduleVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.gateScheduleVisualizer tags "\"\""
+par MobileNetwork.visualizer.gateScheduleVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.gateScheduleVisualizer displayGateSchedules false
+par MobileNetwork.visualizer.gateScheduleVisualizer labelFormat "\"%i %D\""
+par MobileNetwork.visualizer.gateScheduleVisualizer gateFilter "\"**\""
+par MobileNetwork.visualizer.gateScheduleVisualizer width 100
+par MobileNetwork.visualizer.gateScheduleVisualizer height 8
+par MobileNetwork.visualizer.gateScheduleVisualizer spacing 2
+par MobileNetwork.visualizer.gateScheduleVisualizer placementHint "\"right\""
+par MobileNetwork.visualizer.gateScheduleVisualizer placementPriority 0
+par MobileNetwork.visualizer.gateScheduleVisualizer displayDuration 0s
+attr mutable ""
+attr unit s
+par MobileNetwork.visualizer.gateScheduleVisualizer currentTimePosition 50
+par MobileNetwork.visualizer.gateScheduleVisualizer zIndex 10
+par MobileNetwork.visualizer.radioVisualizer typename "\"inet.visualizer.canvas.physicallayer.RadioCanvasVisualizer\""
+par MobileNetwork.visualizer.radioVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.radioVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.radioVisualizer tags "\"\""
+par MobileNetwork.visualizer.radioVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.radioVisualizer displayRadios false
+par MobileNetwork.visualizer.radioVisualizer displayRadioMode true
+par MobileNetwork.visualizer.radioVisualizer displayReceptionState true
+par MobileNetwork.visualizer.radioVisualizer displayTransmissionState true
+par MobileNetwork.visualizer.radioVisualizer displayAntennaLobes false
+par MobileNetwork.visualizer.radioVisualizer radioFilter "\"**\""
+attr mutable ""
+par MobileNetwork.visualizer.radioVisualizer radioModeImages "\"block/process_vs block/timer_vs block/wrx_vs block/wtx_vs block/wrxtx_vs block/cogwheel_vs\""
+par MobileNetwork.visualizer.radioVisualizer receptionStateImages "\"- - misc/receiving misc/receiving\""
+par MobileNetwork.visualizer.radioVisualizer transmissionStateImages "\"- - misc/transmitting\""
+par MobileNetwork.visualizer.radioVisualizer width 16
+par MobileNetwork.visualizer.radioVisualizer height 16
+par MobileNetwork.visualizer.radioVisualizer placementHint "\"bottomRight\""
+par MobileNetwork.visualizer.radioVisualizer placementPriority 0
+par MobileNetwork.visualizer.radioVisualizer antennaLobeNormalize false
+par MobileNetwork.visualizer.radioVisualizer antennaLobeRelativeLabels false
+par MobileNetwork.visualizer.radioVisualizer antennaLobePlaneGlobal true
+par MobileNetwork.visualizer.radioVisualizer antennaLobePlane "\"view\""
+attr enum view,xy,xz,yz
+par MobileNetwork.visualizer.radioVisualizer antennaLobeMode "\"logarithmic\""
+attr enum logarithmic,linear
+par MobileNetwork.visualizer.radioVisualizer antennaLobeLogarithmicBase 10
+par MobileNetwork.visualizer.radioVisualizer antennaLobeLogarithmicScale 100
+par MobileNetwork.visualizer.radioVisualizer antennaLobeRadius 100
+par MobileNetwork.visualizer.radioVisualizer antennaLobeStep 10deg
+attr unit deg
+par MobileNetwork.visualizer.radioVisualizer antennaLobeOpacity 0.25
+par MobileNetwork.visualizer.radioVisualizer antennaLobeLineSmooth true
+par MobileNetwork.visualizer.radioVisualizer antennaLobeLineColor "\"black\""
+par MobileNetwork.visualizer.radioVisualizer antennaLobeLineStyle "\"solid\""
+par MobileNetwork.visualizer.radioVisualizer antennaLobeLineWidth 1
+par MobileNetwork.visualizer.radioVisualizer antennaLobeFillColor "\"white\""
+par MobileNetwork.visualizer.radioVisualizer zIndex 10
+par MobileNetwork.visualizer.physicalLinkVisualizer typename "\"inet.visualizer.canvas.physicallayer.PhysicalLinkCanvasVisualizer\""
+par MobileNetwork.visualizer.physicalLinkVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.physicalLinkVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.physicalLinkVisualizer tags "\"\""
+par MobileNetwork.visualizer.physicalLinkVisualizer displayLinks false
+par MobileNetwork.visualizer.physicalLinkVisualizer activityLevel "\"service\""
+attr enum service,peer,protocol
+par MobileNetwork.visualizer.physicalLinkVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.physicalLinkVisualizer interfaceFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.physicalLinkVisualizer packetFilter "(omnetpp::cValueHolder)holder: \"*\""
+attr mutable ""
+par MobileNetwork.visualizer.physicalLinkVisualizer lineColor "\"olive\""
+par MobileNetwork.visualizer.physicalLinkVisualizer lineStyle "\"dotted\""
+par MobileNetwork.visualizer.physicalLinkVisualizer lineWidth 3
+par MobileNetwork.visualizer.physicalLinkVisualizer lineShift 16
+par MobileNetwork.visualizer.physicalLinkVisualizer lineShiftMode "\"normal\""
+par MobileNetwork.visualizer.physicalLinkVisualizer lineContactSpacing 3
+par MobileNetwork.visualizer.physicalLinkVisualizer lineContactMode "\"rectangular\""
+attr enum circular,rectangular
+par MobileNetwork.visualizer.physicalLinkVisualizer labelFormat "\"%n\""
+par MobileNetwork.visualizer.physicalLinkVisualizer labelFont "\"<default>, 8px\""
+par MobileNetwork.visualizer.physicalLinkVisualizer labelColor "\"olive\""
+par MobileNetwork.visualizer.physicalLinkVisualizer fadeOutMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.physicalLinkVisualizer fadeOutTime 1s
+attr unit s
+par MobileNetwork.visualizer.physicalLinkVisualizer fadeOutAnimationSpeed 0
+par MobileNetwork.visualizer.physicalLinkVisualizer holdAnimationTime 0s
+attr unit s
+par MobileNetwork.visualizer.physicalLinkVisualizer zIndex 1
+par MobileNetwork.visualizer.interfaceTableVisualizer typename "\"inet.visualizer.canvas.linklayer.InterfaceTableCanvasVisualizer\""
+par MobileNetwork.visualizer.interfaceTableVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.interfaceTableVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.interfaceTableVisualizer tags "\"\""
+par MobileNetwork.visualizer.interfaceTableVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.interfaceTableVisualizer displayInterfaceTables false
+par MobileNetwork.visualizer.interfaceTableVisualizer displayWiredInterfacesAtConnections true
+par MobileNetwork.visualizer.interfaceTableVisualizer displayBackground false
+par MobileNetwork.visualizer.interfaceTableVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.interfaceTableVisualizer interfaceFilter "\"not(lo*)\""
+attr mutable ""
+par MobileNetwork.visualizer.interfaceTableVisualizer format "\"%N %\\\\%a%/%l\""
+attr mutable ""
+par MobileNetwork.visualizer.interfaceTableVisualizer placementHint "\"top\""
+par MobileNetwork.visualizer.interfaceTableVisualizer placementPriority 0
+par MobileNetwork.visualizer.interfaceTableVisualizer font "\"<default>\""
+par MobileNetwork.visualizer.interfaceTableVisualizer textColor "\"#005030\""
+par MobileNetwork.visualizer.interfaceTableVisualizer backgroundColor "\"white\""
+par MobileNetwork.visualizer.interfaceTableVisualizer opacity 1
+par MobileNetwork.visualizer.interfaceTableVisualizer zIndex 10
+par MobileNetwork.visualizer.dataLinkVisualizer typename "\"inet.visualizer.canvas.linklayer.DataLinkCanvasVisualizer\""
+par MobileNetwork.visualizer.dataLinkVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.dataLinkVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.dataLinkVisualizer tags "\"\""
+par MobileNetwork.visualizer.dataLinkVisualizer displayLinks false
+par MobileNetwork.visualizer.dataLinkVisualizer activityLevel "\"service\""
+attr enum service,peer,protocol
+par MobileNetwork.visualizer.dataLinkVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.dataLinkVisualizer interfaceFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.dataLinkVisualizer packetFilter "(omnetpp::cValueHolder)holder: \"*\""
+attr mutable ""
+par MobileNetwork.visualizer.dataLinkVisualizer lineColor "\"darkcyan\""
+par MobileNetwork.visualizer.dataLinkVisualizer lineStyle "\"solid\""
+par MobileNetwork.visualizer.dataLinkVisualizer lineWidth 3
+par MobileNetwork.visualizer.dataLinkVisualizer lineShift 16
+par MobileNetwork.visualizer.dataLinkVisualizer lineShiftMode "\"normal\""
+par MobileNetwork.visualizer.dataLinkVisualizer lineContactSpacing 3
+par MobileNetwork.visualizer.dataLinkVisualizer lineContactMode "\"rectangular\""
+attr enum circular,rectangular
+par MobileNetwork.visualizer.dataLinkVisualizer labelFormat "\"%n\""
+par MobileNetwork.visualizer.dataLinkVisualizer labelFont "\"<default>, 8px\""
+par MobileNetwork.visualizer.dataLinkVisualizer labelColor "\"darkcyan\""
+par MobileNetwork.visualizer.dataLinkVisualizer fadeOutMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.dataLinkVisualizer fadeOutTime 1s
+attr unit s
+par MobileNetwork.visualizer.dataLinkVisualizer fadeOutAnimationSpeed 0
+par MobileNetwork.visualizer.dataLinkVisualizer holdAnimationTime 0s
+attr unit s
+par MobileNetwork.visualizer.dataLinkVisualizer zIndex 2
+par MobileNetwork.visualizer.linkBreakVisualizer typename "\"inet.visualizer.canvas.linklayer.LinkBreakCanvasVisualizer\""
+par MobileNetwork.visualizer.linkBreakVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.linkBreakVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.linkBreakVisualizer tags "\"\""
+par MobileNetwork.visualizer.linkBreakVisualizer displayLinkBreaks false
+par MobileNetwork.visualizer.linkBreakVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.linkBreakVisualizer interfaceFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.linkBreakVisualizer packetFilter "(omnetpp::cValueHolder)holder: \"*\""
+attr mutable ""
+par MobileNetwork.visualizer.linkBreakVisualizer icon "\"status/stop\""
+par MobileNetwork.visualizer.linkBreakVisualizer iconTintAmount 0
+par MobileNetwork.visualizer.linkBreakVisualizer iconTintColor "\"\""
+par MobileNetwork.visualizer.linkBreakVisualizer fadeOutMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.linkBreakVisualizer fadeOutTime 1s
+attr unit s
+par MobileNetwork.visualizer.linkBreakVisualizer fadeOutAnimationSpeed 0
+par MobileNetwork.visualizer.linkBreakVisualizer zIndex 2
+par MobileNetwork.visualizer.ieee80211Visualizer typename "\"inet.visualizer.canvas.linklayer.Ieee80211CanvasVisualizer\""
+par MobileNetwork.visualizer.ieee80211Visualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.ieee80211Visualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.ieee80211Visualizer tags "\"\""
+par MobileNetwork.visualizer.ieee80211Visualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.ieee80211Visualizer displayAssociations false
+par MobileNetwork.visualizer.ieee80211Visualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.ieee80211Visualizer interfaceFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.ieee80211Visualizer minPower -85dBm
+attr unit dBm
+par MobileNetwork.visualizer.ieee80211Visualizer maxPower -50dBm
+attr unit dBm
+par MobileNetwork.visualizer.ieee80211Visualizer icons "\"misc/signal_power_0 misc/signal_power_1 misc/signal_power_2 misc/signal_power_3\""
+par MobileNetwork.visualizer.ieee80211Visualizer iconColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.ieee80211Visualizer labelFont "\"<default>\""
+par MobileNetwork.visualizer.ieee80211Visualizer labelColor "\"black\""
+par MobileNetwork.visualizer.ieee80211Visualizer placementHint "\"top\""
+par MobileNetwork.visualizer.ieee80211Visualizer placementPriority 0
+par MobileNetwork.visualizer.ieee80211Visualizer zIndex 2
+par MobileNetwork.visualizer.networkRouteVisualizer typename "\"inet.visualizer.canvas.networklayer.NetworkRouteCanvasVisualizer\""
+par MobileNetwork.visualizer.networkRouteVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.networkRouteVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.networkRouteVisualizer tags "\"\""
+par MobileNetwork.visualizer.networkRouteVisualizer displayRoutes false
+par MobileNetwork.visualizer.networkRouteVisualizer startPathSignal "\"packetReceivedFromUpper\""
+par MobileNetwork.visualizer.networkRouteVisualizer extendPathSignal "\"packetReceivedFromLower\""
+par MobileNetwork.visualizer.networkRouteVisualizer endPathSignal "\"packetSentToUpper\""
+par MobileNetwork.visualizer.networkRouteVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.networkRouteVisualizer packetFilter "(omnetpp::cValueHolder)holder: \"*\""
+attr mutable ""
+par MobileNetwork.visualizer.networkRouteVisualizer lineColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.networkRouteVisualizer lineStyle "\"solid\""
+par MobileNetwork.visualizer.networkRouteVisualizer lineWidth 3
+par MobileNetwork.visualizer.networkRouteVisualizer lineSmooth false
+par MobileNetwork.visualizer.networkRouteVisualizer lineShift 16
+par MobileNetwork.visualizer.networkRouteVisualizer lineShiftMode "\"normal\""
+par MobileNetwork.visualizer.networkRouteVisualizer lineContactSpacing 3
+par MobileNetwork.visualizer.networkRouteVisualizer lineContactMode "\"rectangular\""
+attr enum circular,rectangular
+par MobileNetwork.visualizer.networkRouteVisualizer labelFormat "\"%n\""
+par MobileNetwork.visualizer.networkRouteVisualizer labelFont "\"<default>, 8px\""
+par MobileNetwork.visualizer.networkRouteVisualizer labelColor "\"\""
+par MobileNetwork.visualizer.networkRouteVisualizer fadeOutMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.networkRouteVisualizer fadeOutTime 1s
+attr unit s
+par MobileNetwork.visualizer.networkRouteVisualizer fadeOutAnimationSpeed 0
+par MobileNetwork.visualizer.networkRouteVisualizer zIndex 3
+par MobileNetwork.visualizer.routingTableVisualizer typename "\"inet.visualizer.canvas.networklayer.RoutingTableCanvasVisualizer\""
+par MobileNetwork.visualizer.routingTableVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.routingTableVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.routingTableVisualizer tags "\"\""
+par MobileNetwork.visualizer.routingTableVisualizer displayRoutingTables false
+par MobileNetwork.visualizer.routingTableVisualizer displayRoutesIndividually true
+par MobileNetwork.visualizer.routingTableVisualizer displayLabels true
+par MobileNetwork.visualizer.routingTableVisualizer destinationFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.routingTableVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.routingTableVisualizer lineColor "\"black\""
+par MobileNetwork.visualizer.routingTableVisualizer lineStyle "\"solid\""
+par MobileNetwork.visualizer.routingTableVisualizer lineWidth 2
+par MobileNetwork.visualizer.routingTableVisualizer lineShift 16
+par MobileNetwork.visualizer.routingTableVisualizer lineShiftMode "\"normal\""
+par MobileNetwork.visualizer.routingTableVisualizer lineContactSpacing 3
+par MobileNetwork.visualizer.routingTableVisualizer lineContactMode "\"rectangular\""
+attr enum circular,rectangular
+par MobileNetwork.visualizer.routingTableVisualizer labelFormat "\"%d/%m -> %g (%n)\""
+attr mutable ""
+par MobileNetwork.visualizer.routingTableVisualizer labelFont "\"<default>, 8px\""
+par MobileNetwork.visualizer.routingTableVisualizer labelColor "\"black\""
+par MobileNetwork.visualizer.routingTableVisualizer zIndex 0
+par MobileNetwork.visualizer.transportRouteVisualizer typename "\"inet.visualizer.canvas.transportlayer.TransportRouteCanvasVisualizer\""
+par MobileNetwork.visualizer.transportRouteVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.transportRouteVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.transportRouteVisualizer tags "\"\""
+par MobileNetwork.visualizer.transportRouteVisualizer displayRoutes false
+par MobileNetwork.visualizer.transportRouteVisualizer startPathSignal "\"packetReceivedFromUpper\""
+par MobileNetwork.visualizer.transportRouteVisualizer extendPathSignal "\"packetReceivedFromLower\""
+par MobileNetwork.visualizer.transportRouteVisualizer endPathSignal "\"packetSentToUpper\""
+par MobileNetwork.visualizer.transportRouteVisualizer nodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.transportRouteVisualizer packetFilter "(omnetpp::cValueHolder)holder: \"*\""
+attr mutable ""
+par MobileNetwork.visualizer.transportRouteVisualizer lineColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.transportRouteVisualizer lineStyle "\"solid\""
+par MobileNetwork.visualizer.transportRouteVisualizer lineWidth 3
+par MobileNetwork.visualizer.transportRouteVisualizer lineSmooth false
+par MobileNetwork.visualizer.transportRouteVisualizer lineShift 16
+par MobileNetwork.visualizer.transportRouteVisualizer lineShiftMode "\"normal\""
+par MobileNetwork.visualizer.transportRouteVisualizer lineContactSpacing 3
+par MobileNetwork.visualizer.transportRouteVisualizer lineContactMode "\"rectangular\""
+attr enum circular,rectangular
+par MobileNetwork.visualizer.transportRouteVisualizer labelFormat "\"%n\""
+par MobileNetwork.visualizer.transportRouteVisualizer labelFont "\"<default>, 8px\""
+par MobileNetwork.visualizer.transportRouteVisualizer labelColor "\"\""
+par MobileNetwork.visualizer.transportRouteVisualizer fadeOutMode "\"realTime\""
+attr enum realTime,animationTime,simulationTime
+par MobileNetwork.visualizer.transportRouteVisualizer fadeOutTime 1s
+attr unit s
+par MobileNetwork.visualizer.transportRouteVisualizer fadeOutAnimationSpeed 0
+par MobileNetwork.visualizer.transportRouteVisualizer zIndex 4
+par MobileNetwork.visualizer.transportConnectionVisualizer typename "\"inet.visualizer.canvas.transportlayer.TransportConnectionCanvasVisualizer\""
+par MobileNetwork.visualizer.transportConnectionVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.transportConnectionVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.transportConnectionVisualizer tags "\"\""
+par MobileNetwork.visualizer.transportConnectionVisualizer networkNodeVisualizerModule "\"^.networkNodeVisualizer\""
+par MobileNetwork.visualizer.transportConnectionVisualizer displayTransportConnections false
+par MobileNetwork.visualizer.transportConnectionVisualizer sourceNodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.transportConnectionVisualizer sourcePortFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.transportConnectionVisualizer destinationNodeFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.transportConnectionVisualizer destinationPortFilter "\"*\""
+attr mutable ""
+par MobileNetwork.visualizer.transportConnectionVisualizer icon "\"misc/marker_s\""
+par MobileNetwork.visualizer.transportConnectionVisualizer iconColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.transportConnectionVisualizer labelFont "\"<default>\""
+par MobileNetwork.visualizer.transportConnectionVisualizer labelColor "\"black\""
+par MobileNetwork.visualizer.transportConnectionVisualizer placementHint "\"top\""
+par MobileNetwork.visualizer.transportConnectionVisualizer placementPriority 0
+par MobileNetwork.visualizer.transportConnectionVisualizer zIndex 4
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer typename "\"inet.visualizer.canvas.configurator.FailureProtectionConfigurationCanvasVisualizer\""
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer tags "\"\""
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer displayTrees false
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer lineColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer lineStyle "\"solid\""
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer lineWidth 3
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer lineSmooth false
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer lineShift 16
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer lineShiftMode "\"normal\""
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer lineContactSpacing 3
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer lineContactMode "\"rectangular\""
+attr enum circular,rectangular
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer failureProtectionConfiguratorModule "\"failureProtectionConfigurator\""
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer streamFilter "\"*\""
+par MobileNetwork.visualizer.failureProtectionConfigurationVisualizer zIndex 3
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer typename "\"inet.visualizer.canvas.configurator.StreamRedundancyConfigurationCanvasVisualizer\""
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer visualizationTargetModule "\"^.^\""
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer visualizationSubjectModule "\"^.^\""
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer tags "\"\""
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer displayTrees false
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer lineColor "\"dark\""
+attr enum light,dark
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer lineStyle "\"solid\""
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer lineWidth 3
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer lineSmooth false
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer lineShift 16
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer lineShiftMode "\"normal\""
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer lineContactSpacing 3
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer lineContactMode "\"rectangular\""
+attr enum circular,rectangular
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer streamRedundancyConfiguratorModule "\"streamRedundancyConfigurator\""
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer streamFilter "\"*\""
+par MobileNetwork.visualizer.streamRedundancyConfigurationVisualizer zIndex 3
+par MobileNetwork.visualizer typename "\"inet.visualizer.canvas.integrated.IntegratedCanvasVisualizer\""
+par MobileNetwork.host[0].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[0].mobility subjectModule "\"^\""
+par MobileNetwork.host[0].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[0].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[0].mobility updateDisplayString true
+par MobileNetwork.host[0].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[0].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[0].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[0].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[0].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[0].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[0].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[0].mobility faceForward true
+par MobileNetwork.host[0].mobility turtleScript "<movement id=\"1\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:4"
+par MobileNetwork.host[0] typename "\"MobileHost\""
+par MobileNetwork.host[1].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[1].mobility subjectModule "\"^\""
+par MobileNetwork.host[1].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[1].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[1].mobility updateDisplayString true
+par MobileNetwork.host[1].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[1].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[1].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[1].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[1].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[1].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[1].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[1].mobility faceForward true
+par MobileNetwork.host[1].mobility turtleScript "<movement id=\"2\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:12"
+par MobileNetwork.host[1] typename "\"MobileHost\""
+par MobileNetwork.host[2].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[2].mobility subjectModule "\"^\""
+par MobileNetwork.host[2].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[2].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[2].mobility updateDisplayString true
+par MobileNetwork.host[2].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[2].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[2].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[2].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[2].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[2].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[2].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[2].mobility faceForward true
+par MobileNetwork.host[2].mobility turtleScript "<movement id=\"3\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:20"
+par MobileNetwork.host[2] typename "\"MobileHost\""
+par MobileNetwork.host[3].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[3].mobility subjectModule "\"^\""
+par MobileNetwork.host[3].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[3].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[3].mobility updateDisplayString true
+par MobileNetwork.host[3].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[3].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[3].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[3].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[3].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[3].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[3].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[3].mobility faceForward true
+par MobileNetwork.host[3].mobility turtleScript "<movement id=\"4\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:28"
+par MobileNetwork.host[3] typename "\"MobileHost\""
+par MobileNetwork.host[4].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[4].mobility subjectModule "\"^\""
+par MobileNetwork.host[4].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[4].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[4].mobility updateDisplayString true
+par MobileNetwork.host[4].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[4].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[4].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[4].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[4].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[4].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[4].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[4].mobility faceForward true
+par MobileNetwork.host[4].mobility turtleScript "<movement id=\"5\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:36"
+par MobileNetwork.host[4] typename "\"MobileHost\""
+par MobileNetwork.host[5].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[5].mobility subjectModule "\"^\""
+par MobileNetwork.host[5].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[5].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[5].mobility updateDisplayString true
+par MobileNetwork.host[5].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[5].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[5].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[5].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[5].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[5].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[5].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[5].mobility faceForward true
+par MobileNetwork.host[5].mobility turtleScript "<movement id=\"6\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:46"
+par MobileNetwork.host[5] typename "\"MobileHost\""
+par MobileNetwork.host[6].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[6].mobility subjectModule "\"^\""
+par MobileNetwork.host[6].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[6].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[6].mobility updateDisplayString true
+par MobileNetwork.host[6].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[6].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[6].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[6].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[6].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[6].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[6].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[6].mobility faceForward true
+par MobileNetwork.host[6].mobility turtleScript "<movement id=\"7\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:54"
+par MobileNetwork.host[6] typename "\"MobileHost\""
+par MobileNetwork.host[7].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[7].mobility subjectModule "\"^\""
+par MobileNetwork.host[7].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[7].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[7].mobility updateDisplayString true
+par MobileNetwork.host[7].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[7].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[7].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[7].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[7].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[7].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[7].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[7].mobility faceForward true
+par MobileNetwork.host[7].mobility turtleScript "<movement id=\"8\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:62"
+par MobileNetwork.host[7] typename "\"MobileHost\""
+par MobileNetwork.host[8].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[8].mobility subjectModule "\"^\""
+par MobileNetwork.host[8].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[8].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[8].mobility updateDisplayString true
+par MobileNetwork.host[8].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[8].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[8].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[8].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[8].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[8].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[8].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[8].mobility faceForward true
+par MobileNetwork.host[8].mobility turtleScript "<movement id=\"9\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:72"
+par MobileNetwork.host[8] typename "\"MobileHost\""
+par MobileNetwork.host[9].mobility typename "\"inet.mobility.single.TurtleMobility\""
+par MobileNetwork.host[9].mobility subjectModule "\"^\""
+par MobileNetwork.host[9].mobility coordinateSystemModule "\"\""
+par MobileNetwork.host[9].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par MobileNetwork.host[9].mobility updateDisplayString true
+par MobileNetwork.host[9].mobility constraintAreaMinX 0m
+attr unit m
+par MobileNetwork.host[9].mobility constraintAreaMinY 0m
+attr unit m
+par MobileNetwork.host[9].mobility constraintAreaMinZ 0m
+attr unit m
+par MobileNetwork.host[9].mobility constraintAreaMaxX 600m
+attr unit m
+par MobileNetwork.host[9].mobility constraintAreaMaxY 600m
+attr unit m
+par MobileNetwork.host[9].mobility constraintAreaMaxZ 0m
+attr unit m
+par MobileNetwork.host[9].mobility updateInterval 1s
+attr unit s
+par MobileNetwork.host[9].mobility faceForward true
+par MobileNetwork.host[9].mobility turtleScript "<movement id=\"10\">...</movement> at /home/alperen/omnetpp-6.0/samples/AirDroneProject//turtle1.xml:80"
+par MobileNetwork.host[9] typename "\"MobileHost\""
+par MobileNetwork.environment.ground typename "\"inet.environment.ground.FlatGround\""
+par MobileNetwork.environment.ground elevation 0m
+attr unit m
+par MobileNetwork.environment typename "\"inet.environment.common.PhysicalEnvironment\""
+par MobileNetwork.environment coordinateSystemModule "\"\""
+par MobileNetwork.environment temperature 293K
+attr unit K
+par MobileNetwork.environment spaceMinX "nan m"
+attr unit m
+par MobileNetwork.environment spaceMinY "nan m"
+attr unit m
+par MobileNetwork.environment spaceMinZ "nan m"
+attr unit m
+par MobileNetwork.environment spaceMaxX "nan m"
+attr unit m
+par MobileNetwork.environment spaceMaxY "nan m"
+attr unit m
+par MobileNetwork.environment spaceMaxZ "nan m"
+attr unit m
+par MobileNetwork.environment config "<config/> at content:1"
+par MobileNetwork typename "\"MobileNetwork\""
+par MobileNetwork numHosts 10
+par MobileNetwork hasVisualizer true
+par MobileNetwork hasScenarioManager false
+par MobileNetwork hasEnvironment true
+

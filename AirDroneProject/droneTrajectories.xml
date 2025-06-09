@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<paths>
+
+    <!-- Drone[0] … Drone[9] each get their own <path> -->
+    
+    <!-- Triangle formation: drones 0–2 -->
+    <path module="Drone[0].mobility" loop="true">
+        <position time="0s"  x="100m" y="100m" z="0m"/>
+        <position time="10s" x="200m" y="100m" z="0m"/>
+        <position time="20s" x="150m" y="200m" z="0m"/>
+        <position time="30s" x="100m" y="100m" z="0m"/>
+    </path>
+    <path module="Drone[1].mobility" loop="true">
+        <position time="0s"  x="200m" y="100m" z="0m"/>
+        <position time="10s" x="150m" y="200m" z="0m"/>
+        <position time="20s" x="100m" y="100m" z="0m"/>
+        <position time="30s" x="200m" y="100m" z="0m"/>
+    </path>
+    <path module="Drone[2].mobility" loop="true">
+        <position time="0s"  x="150m" y="200m" z="0m"/>
+        <position time="10s" x="100m" y="100m" z="0m"/>
+        <position time="20s" x="200m" y="100m" z="0m"/>
+        <position time="30s" x="150m" y="200m" z="0m"/>
+    </path>
+
+    <!-- Rectangle formation: drones 3–6 -->
+    <path module="Drone[3].mobility" loop="true">
+        <position time="0s"  x="300m" y="100m" z="0m"/>
+        <position time="10s" x="400m" y="100m" z="0m"/>
+        <position time="20s" x="400m" y="200m" z="0m"/>
+        <position time="30s" x="300m" y="200m" z="0m"/>
+        <position time="40s" x="300m" y="100m" z="0m"/>
+    </path>
+    <path module="Drone[4].mobility" loop="true">
+        <position time="0s"  x="400m" y="100m" z="0m"/>
+        <position time="10s" x="400m" y="200m" z="0m"/>
+        <position time="20s" x="300m" y="200m" z="0m"/>
+        <position time="30s" x="300m" y="100m" z="0m"/>
+        <position time="40s" x="400m" y="100m" z="0m"/>
+    </path>
+    <path module="Drone[5].mobility" loop="true">
+        <position time="0s"  x="400m" y="200m" z="0m"/>
+        <position time="10s" x="300m" y="200m" z="0m"/>
+        <position time="20s" x="300m" y="100m" z="0m"/>
+        <position time="30s" x="400m" y="100m" z="0m"/>
+        <position time="40s" x="400m" y="200m" z="0m"/>
+    </path>
+    <path module="Drone[6].mobility" loop="true">
+        <position time="0s"  x="300m" y="200m" z="0m"/>
+        <position time="10s" x="300m" y="100m" z="0m"/>
+        <position time="20s" x="400m" y="100m" z="0m"/>
+        <position time="30s" x="400m" y="200m" z="0m"/>
+        <position time="40s" x="300m" y="200m" z="0m"/>
+    </path>
+
+    <!-- Star formation: drones 7–8 -->
+    <path module="Drone[7].mobility" loop="true">
+        <position time="0s"  x="150m" y="300m" z="0m"/>
+        <position time="10s" x="200m" y="350m" z="0m"/>
+        <position time="20s" x="250m" y="300m" z="0m"/>
+        <position time="30s" x="200m" y="250m" z="0m"/>
+        <position time="40s" x="150m" y="300m" z="0m"/>
+    </path>
+    <path module="Drone[8].mobility" loop="true">
+        <position time="0s"  x="200m" y="350m" z="0m"/>
+        <position time="10s" x="250m" y="300m" z="0m"/>
+        <position time="20s" x="300m" y="350m" z="0m"/>
+        <position time="30s" x="250m" y="400m" z="0m"/>
+        <position time="40s" x="200m" y="350m" z="0m"/>
+    </path>
+
+    <!-- Circle formation: drone 9 -->
+    <path module="Drone[9].mobility" loop="true">
+        <!-- 8 pts around a 50 m‐radius circle centered at (400,300) -->
+        <position time="0s"   x="450m" y="300m" z="0m"/>
+        <position time="5s"   x="435m" y="335m" z="0m"/>
+        <position time="10s"  x="400m" y="350m" z="0m"/>
+        <position time="15s"  x="365m" y="335m" z="0m"/>
+        <position time="20s"  x="350m" y="300m" z="0m"/>
+        <position time="25s"  x="365m" y="265m" z="0m"/>
+        <position time="30s"  x="400m" y="250m" z="0m"/>
+        <position time="35s"  x="435m" y="265m" z="0m"/>
+        <position time="40s"  x="450m" y="300m" z="0m"/>
+    </path>
+</paths>

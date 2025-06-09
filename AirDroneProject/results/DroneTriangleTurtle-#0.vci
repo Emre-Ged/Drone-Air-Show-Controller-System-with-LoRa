@@ -1,0 +1,231 @@
+file 587747 1749414401                                          
+version 3
+run DroneTriangleTurtle-0-20250608-23:26:09-369115
+attr configname DroneTriangleTurtle
+attr datetime 20250608-23:26:09
+attr datetimef 20250608-232609
+attr experiment DroneTriangleTurtle
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MobileNetwork
+attr processid 369115
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../inet4.4/images
+config extends "MobileNetwork, Area, Update"
+config description "three drones flying to the corners of a triangle via TurtleMobility"
+config *.numHosts 10
+config *.hasEnvironment true
+config *.hasVisualizer true
+config *.environment.ground.typename FlatGround
+config *.visualizer.mobilityVisualizer.displayMobility true
+config *.host[*].mobility.typename TurtleMobility
+config *.host[0].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='1']\")"
+config *.host[1].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='2']\")"
+config *.host[2].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='3']\")"
+config *.host[3].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='4']\")"
+config *.host[4].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='5']\")"
+config *.host[5].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='6']\")"
+config *.host[6].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='7']\")"
+config *.host[7].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='8']\")"
+config *.host[8].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='9']\")"
+config *.host[9].mobility.turtleScript "xmldoc(\"turtle1.xml\",\n                                         \"movements//movement[@id='10']\")"
+config *.host[*].mobility.speed 5mps
+config *.host[*].mobility.stopAtEnd false
+config network MobileNetwork
+config *.numHosts 2
+config **.constraintAreaMinX 0m
+config **.constraintAreaMinY 0m
+config **.constraintAreaMinZ 0m
+config **.constraintAreaMaxX 600m
+config **.constraintAreaMaxY 600m
+config **.constraintAreaMaxZ 0m
+config **.updateInterval 1s
+
+vector 0 MobileNetwork.host[0] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 1 MobileNetwork.host[0] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 2 MobileNetwork.host[0] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 3 MobileNetwork.host[1] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 4 MobileNetwork.host[1] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 5 MobileNetwork.host[1] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 6 MobileNetwork.host[2] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 7 MobileNetwork.host[2] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 8 MobileNetwork.host[2] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 9 MobileNetwork.host[3] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 10 MobileNetwork.host[3] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 11 MobileNetwork.host[3] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 12 MobileNetwork.host[4] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 13 MobileNetwork.host[4] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 14 MobileNetwork.host[4] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 15 MobileNetwork.host[5] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 16 MobileNetwork.host[5] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 17 MobileNetwork.host[5] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 18 MobileNetwork.host[6] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 19 MobileNetwork.host[6] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 20 MobileNetwork.host[6] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 21 MobileNetwork.host[7] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 22 MobileNetwork.host[7] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 23 MobileNetwork.host[7] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 24 MobileNetwork.host[8] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 25 MobileNetwork.host[8] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 26 MobileNetwork.host[8] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+vector 27 MobileNetwork.host[9] coordX:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source xCoord(mobilityPos(mobilityStateChanged))
+attr title "coord X"
+vector 28 MobileNetwork.host[9] coordY:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source yCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Y"
+vector 29 MobileNetwork.host[9] coordZ:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source zCoord(mobilityPos(mobilityStateChanged))
+attr title "coord Z"
+0	8041 19662 0 794 0 82.20845309152 695 150 400 125290.65907798 25425668.145331
+1	27703 19661 0 794 0 82.20845309152 695 150 355.70676983334 115185.46475341 19884191.471694
+2	47364 16261 0 794 0 82.20845309152 695 0 0 0 0
+3	63625 19642 0 794 0 82.20845309152 695 200 506.55944645405 158533.67082693 37928807.425554
+4	83267 19553 0 794 0 82.20845309152 695 150 361.65802222677 116644.83194202 20786043.532765
+5	102820 16261 0 794 0 82.20845309152 695 0 0 0 0
+6	119081 19606 0 794 0 82.20845309152 695 250 326.92990642972 186805.9700607 50403813.467456
+7	138687 19442 0 794 0 82.20845309152 695 150 508.35104235448 121993.36116609 24119855.784388
+8	158129 16261 0 794 0 82.20845309152 695 0 0 0 0
+9	174390 19783 0 794 0 82.20845309152 695 203.6 374.13821783848 221338.43096264 71254539.411905
+10	194173 20192 0 794 0 82.20845309152 695 150 392.7 121956.33801442 23682223.111742
+11	214365 16956 0 794 0 82.20845309152 695 0 0 0 0
+12	231321 20008 0 794 0 82.20845309152 695 128.6 350 216791.74246837 71385706.430229
+13	251329 20577 0 794 0 82.20845309152 695 150 338.2 161613.05899109 40277554.84946
+14	271906 16956 0 794 0 82.20845309152 695 0 0 0 0
+15	288862 22731 0 794 0 82.20845309152 695 34.027785435319 350 194061.4350723 58765058.859293
+16	311593 22732 0 794 0 82.20845309152 695 207.7 578.19765843451 203665.25711485 63154409.602003
+17	334325 16956 0 794 0 82.20845309152 695 0 0 0 0
+18	351281 20920 0 794 0 82.20845309152 695 128.6 283.3 173472.71998216 45449041.779502
+19	372201 20933 0 794 0 82.20845309152 695 161.8 350 198935.73741076 59847849.436442
+20	393134 16956 0 794 0 82.20845309152 695 0 0 0 0
+21	410090 20386 0 794 0 82.20845309152 695 203.6 487.30123587884 158602.28223108 37063674.138037
+22	430476 20652 0 794 0 82.20845309152 695 107.3 350 220742.72018958 72651256.071991
+23	451128 16956 0 794 0 82.20845309152 695 0 0 0 0
+24	468084 21179 0 794 0 82.20845309152 695 150 340.82673825324 133979.34797559 27117794.625018
+25	489263 21188 0 794 0 82.20845309152 695 107.3 350 201522.22476634 61323756.779495
+26	510451 16956 0 794 0 82.20845309152 695 0 0 0 0
+27	527407 21693 0 794 0 82.20845309152 695 150 501.64726129733 149182.70736351 36046565.123027
+28	549100 21690 0 794 0 82.20845309152 695 42.621635226533 250 144566.13305387 30992418.04579
+29	570790 16956 0 794 0 82.20845309152 695 0 0 0 0
+
